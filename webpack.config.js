@@ -10,6 +10,11 @@ module.exports = {
   resolve: {
     extensions: ["*", ".mjs", ".js", ".svelte"]
   },
+  devServer: {
+    host: "192.168.1.54",
+    port: 8080
+    // disableHostCheck: true,
+  },
   module: {
     rules: [
       {

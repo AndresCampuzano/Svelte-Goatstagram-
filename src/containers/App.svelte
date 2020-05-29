@@ -1,10 +1,20 @@
+<script>
+  import Header from "../components/Header.svelte";
+  import Main from "../components/Main.svelte";
+  import Sidebar from "../components/Sidebar.svelte";
+  import TimeLine from "../components/TimeLine.svelte";
+</script>
+
 <style>
   :global(body) {
-    background-color: #676778;
+    /* background-color: #676778; */
+    background-color: #000000;
     color: white;
   }
 </style>
 
-<div class="main">
-  <h1>Hello Goatstagram 🐐</h1>
-</div>
+<Header />
+<Main>
+  <TimeLine />
+  <Sidebar />
+</Main>
