@@ -1,3 +1,9 @@
+<script>
+  export let nickname;
+  export let name;
+
+</script>
+
 <style>
   .Profile-content {
     display: flex;
@@ -29,8 +35,8 @@
       <img src="https://pbs.twimg.com/profile_images/1197212422194520065/eoys9Yjd_400x400.jpg" alt="avatar profile" />
     </div>
     <div class="Profile-info">
-      <h2>campuzanodev</h2>
-      <span>Andres Campuzano</span>
+      <h2>{nickname}</h2>
+      <span>{name}</span>
     </div>
   </div>
 </div>

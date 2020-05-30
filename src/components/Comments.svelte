@@ -1,3 +1,7 @@
+<script>
+  export let comments = [];
+</script>
+
 <style>
   .Comments h3 {
     font-size: 14px;
@@ -53,10 +57,12 @@
 
 <div class="Comments">
   <div class="Comments-content">
+    {#each comments as x (x.id)}
       <div class="Comments-users">
-        <h3>PugFriend</h3>
-        <span>Are u having a great time?</span>
+        <h3>{x.username}</h3>
+        <span>{x.text}</span>
       </div>
+    {/each}
     <div class="Comments-add">
       <form>
         <input
