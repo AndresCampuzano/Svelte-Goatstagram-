@@ -1,9 +1,11 @@
 <script>
   import Comments from "./Comments.svelte";
   import Modal from "./Modal.svelte";
-  import Share from "./Share.svelte"
+  import Share from "./Share.svelte";
 
-  import { blur } from 'svelte/transition'
+  import { blur } from 'svelte/transition';
+
+  import { likeCount } from "../store/store";
 
   export let username;
   export let location;
@@ -13,9 +15,26 @@
   export let avatar;
 
   let isModal = false;
+  let like = false;
+  let bookmark = false;
 
   function handleModal() {
     isModal = !isModal;
+  }
+
+  function handleLike() {
+    like = !like;
+    console.log(like);
+    if (like) {
+      likeCount.update(n => n + 1);
+    } else {
+      likeCount.update(n => n - 1);
+    }
+  }
+
+  function handleBookmark() {
+    bookmark = !bookmark;
+    console.log(bookmark);
   }
 
 </script>
@@ -106,6 +125,9 @@
   }
   .active-bookmark {
     color: #f09433;
+    animation: bounce linear 0.8s;
+    animation-iteration-count: 1;
+    transform-origin: 20% 20%;
   }
 
   @keyframes bounce {
@@ -157,22 +179,38 @@
       </div>
     </div>
     <div class="Card-photo">
-      <figure>
-        <img src={photo} alt={username} transition:blur/>
+      <figure on:dblclick={handleLike}>
+        <img src={photo} alt={username} transition:blur />
       </figure>
     </div>
     <div class="Card-icons">
       <div class="Card-icons-firts">
-        <button>
-          <i class="fas fa-heart" />
+        <button on:click={handleLike}>
+          {#if like}
+            <div>
+              <i class="fas fa-heart active-like"/>
+            </div>
+          {:else}
+            <div>
+              <i class="fas fa-heart"/>
+            </div>
+          {/if}
         </button>
-        <button on:click={handleModal}>
-          <i class="fas fa-paper-plane" on:click={handleModal}/>
+        <button on:click={handleModal} style="margin-left: 15px">
+          <i class="fas fa-paper-plane"/>
         </button>
       </div>
       <div class="Card-icons-second">
-        <button>
-          <i class="fas fa-bookmark" />
+        <button on:click={handleBookmark}>
+          {#if bookmark}
+            <div>
+              <i class="fas fa-bookmark active-bookmark"/>
+            </div>
+          {:else}
+            <div>
+              <i class="fas fa-bookmark"/>
+            </div>
+          {/if}
         </button>
       </div>
     </div>
