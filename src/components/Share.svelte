@@ -5,7 +5,7 @@
     background-color: white;
     margin: 0 0 2em 0;
     width: 300px;
-    height: 80px;
+    height: 140px;
     position: absolute;
     top: 300px;
     left: 30%;
@@ -41,14 +41,24 @@
 <div class="Share">
   <div class="Share-head">
     <h2>Share</h2>
-    <i class="fas fa-times-circle" on:click />
+    <button on:click ><i class="fas fa-times-circle"/></button>
   </div>
   <div class="Share-content">
     <a
-      href="https://www.facebook.com/sharer/sharer.php?&u=https://goatstagram.com"
+      href="https://www.facebook.com/sharer/sharer.php?&u=https://andrescampuzano.com"
       target="_blank">
-      <i class="fab fa-facebook-square" />
-      Share on Facebook
+      <button>
+        <i class="fab fa-facebook-square" style="color: blue"/>
+      </button>
+        Share on Facebook
+    </a>
+    <a
+      href="https://api.whatsapp.com/send?&text=check%20this%20goat%20https://andrescampuzano.com/"
+      target="_blank">
+      <button>
+        <i class="fab fa-whatsapp-square" style="color: green"/>
+      </button>
+        Share on WhatsApp
     </a>
   </div>
 </div>

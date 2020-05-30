@@ -136,7 +136,7 @@
 <div class="Card">
   {#if isModal}
     <div transition:blur>
-      <Modal>
+      <Modal on:click={handleModal} >
         <Share on:click={handleModal} />
       </Modal>
     </div>
@@ -151,21 +151,29 @@
         </h2>
       </div>
       <div class="Card-settings">
-        <i class="fas fa-ellipsis-h" />
+        <button>
+          <i class="fas fa-ellipsis-h" />
+        </button>
       </div>
     </div>
     <div class="Card-photo">
       <figure>
-        <img src={photo} alt={username} />
+        <img src={photo} alt={username} transition:blur/>
       </figure>
     </div>
     <div class="Card-icons">
       <div class="Card-icons-firts">
-        <i class="fas fa-heart" />
-        <i class="fas fa-paper-plane" on:click={handleModal}/>
+        <button>
+          <i class="fas fa-heart" />
+        </button>
+        <button on:click={handleModal}>
+          <i class="fas fa-paper-plane" on:click={handleModal}/>
+        </button>
       </div>
       <div class="Card-icons-second">
-        <i class="fas fa-bookmark" />
+        <button>
+          <i class="fas fa-bookmark" />
+        </button>
       </div>
     </div>
     <div class="Card-description">

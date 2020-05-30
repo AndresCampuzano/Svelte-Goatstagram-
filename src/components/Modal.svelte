@@ -18,6 +18,6 @@
 
 
 <div class="Modal">
-  <div class="Modal-overlay" />
+  <div class="Modal-overlay" on:click/>
   <slot />
 </div>
