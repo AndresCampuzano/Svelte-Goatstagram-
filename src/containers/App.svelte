@@ -6,7 +6,7 @@
   import TimeLine from "../components/TimeLine.svelte";
 
   let data = {};
-  const API = "https://api.jsonbin.io/b/5ed199337741ef56a5645eac";
+  const API = "https://us-central1-goatstagram-two-api.cloudfunctions.net/api";
 
   onMount(async () => {
     const response = await fetch(API);
@@ -31,6 +31,8 @@
     padding: 0;
   }
 </style>
+
+
 
 <Header />
 <Main>
