@@ -13,7 +13,7 @@
   "author": "Andres Campuzano <campuxano88@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "svelte": "^3.23.0"
+    "svelte": "^3.49.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.1",
